@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,46 +8,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
-      <p>Data Engineer | Cloud Enthusiast | Pythonic Problem Solver</p>
-      <a href="#projects" class="btn">See My Work</a>
-    </div>
+  <header class="top-bar">
+    <div class="logo">YourName</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="darkToggle" class="toggle-btn">🌙</button>
   </header>
 
-  <nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+      <p>Data Engineer | AWS Enthusiast | Python Developer</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+  </section>
 
-  <section id="about" class="section fade-in">
+  <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-      I'm a passionate data engineer with over 3 years of experience in designing data pipelines using AWS Glue, S3, Athena, and more. I enjoy solving real-world data problems, automating workflows, and bringing order to chaos through clean, scalable solutions.
+      I'm a data engineer with 3+ years of experience in designing data pipelines, automating workflows, and delivering insights using AWS, Glue, Spark, and Python. I enjoy building scalable and clean data systems.
     </p>
   </section>
 
-  <section id="projects" class="section fade-in">
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">🐍 Python</div>
+      <div class="skill">☁️ AWS</div>
+      <div class="skill">🔥 Spark</div>
+      <div class="skill">🧪 Glue</div>
+      <div class="skill">🐘 PostgreSQL</div>
+      <div class="skill">📦 S3</div>
+      <div class="skill">⚙️ CI/CD</div>
+      <div class="skill">📊 Power BI</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="card-container">
       <div class="card">
-        <h3>🛠️ Modular Data Lake</h3>
-        <p>Built a production-grade data lake using AWS Glue, S3, and Lake Formation, with partitioning and versioning.</p>
+        <h3>Modular Data Lake</h3>
+        <p>Built a serverless data lake using AWS Glue, Lake Formation, and S3.</p>
       </div>
       <div class="card">
-        <h3>📈 Real-Time Analytics</h3>
-        <p>Implemented Spark Streaming jobs that feed into live dashboards for business KPIs with Kafka and DynamoDB.</p>
+        <h3>Streaming Analytics</h3>
+        <p>Real-time KPI dashboards using Spark Streaming and Kafka.</p>
       </div>
       <div class="card">
-        <h3>🔄 CI/CD for Glue Jobs</h3>
-        <p>Used GitLab pipelines to deploy AWS Glue scripts and maintain infrastructure via Terraform and CDK.</p>
+        <h3>CI/CD Glue Jobs</h3>
+        <p>Implemented GitLab CI/CD to deploy and monitor Glue jobs.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section fade-in">
+  <section id="contact" class="section">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
@@ -57,5 +76,15 @@
   <footer>
     <p>&copy; 2025 Your Name. Built with ❤️</p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.onclick = () => {
+      const htmlTag = document.documentElement;
+      const current = htmlTag.getAttribute('data-theme');
+      htmlTag.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+      toggleBtn.textContent = current === 'dark' ? '🌙' : '☀️';
+    };
+  </script>
 </body>
 </html>
